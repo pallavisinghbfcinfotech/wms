@@ -576,6 +576,7 @@ app.post("/api/gettaxsavinguserwise", function (req, res) {
                         ],
                         as: "products"
                         }},
+		        { $unwind: "$products"},
                         {$project :{ _id:0 , products:"$products" } },
                    ]
                 const pipeline1=[  //trans_karvy
